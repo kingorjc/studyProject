@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<display-name>mil-web</display-name>
+	
+	<context-param>
+		<param-name>productionMode</param-name>
+		<param-value>falae</param-value>
+	</context-param>
+	
+	
+	<!-- 加载spring配置文件 -->
+	<context-param>
+		<param-name>parameterConfigLocation</param-name>
+		<param-value>/conf/main.properties</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+<!-- 		<param-value>classpath:spring-application-context.xml</param-value> -->
+		<param-value>classpath:xmlConfig/spring-context.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+
+ <!-- 加载log4j配置文件 -->
+ 
+	<context-param>
+
+		  <param-name>log4jConfigLocation</param-name>
+		
+		  <param-value>classpath:/conf/log4j.properties</param-value>
+
+ 	</context-param>
+
+	 <listener>
+	
+	  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	
+	 </listener>
+
+</web-app>
