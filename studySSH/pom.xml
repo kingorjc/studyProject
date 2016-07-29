@@ -14,7 +14,7 @@
 		<repository>
 			<id>internal repository</id>
 			<name>Local repository</name>
-			<url>http://221.7.84.58:84/nexus/content/groups/public/</url>
+			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>interval:30</updatePolicy>
@@ -26,7 +26,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.1.4.RELEASE</spring.version>
-		<hibernate.version>4.3.8.Final</hibernate.version>
+		<hibernate.version>4.3.10.Final</hibernate.version>
 		<jackson.version>2.5.0</jackson.version>
 	</properties>
 
@@ -117,9 +117,9 @@
 
 		<!-- 二级缓存ehcache -->
 		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache-core</artifactId>
-			<version>2.6.9</version>
+		  <groupId>net.sf.ehcache</groupId>
+		  <artifactId>ehcache-core</artifactId>
+		  <version>2.6.11</version>
 		</dependency>
 
 		<!-- log4j -->

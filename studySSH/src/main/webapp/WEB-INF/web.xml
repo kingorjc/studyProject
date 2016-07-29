@@ -24,25 +24,24 @@
 		<param-value>classpath:xmlConfig/spring-context.xml</param-value>
 	</context-param>
 
-	<listener>
-		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-	</listener>
-
 
  <!-- 加载log4j配置文件 -->
  
-	<context-param>
+<!-- 监听servletContext，启动contextConfigLocation中的spring配置信息 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
-		  <param-name>log4jConfigLocation</param-name>
-		
-		  <param-value>classpath:/conf/log4j.properties</param-value>
+	<!-- 防止spring内存溢出监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+    <welcome-file-list>
+        <welcome-file>module/index.jsp</welcome-file>
+    </welcome-file-list>
 
- 	</context-param>
-
-	 <listener>
-	
-	  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-	
-	 </listener>
-
+	<error-page>
+		<error-code>404</error-code>
+		<location>/module/error.jsp</location>
+	</error-page>
 </web-app>

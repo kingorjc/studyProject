@@ -11,11 +11,12 @@ import com.stu.service.ICustomerService;
 import com.stu.util.ObjectHelper;
 
 @Service(value="customerService")
-@Transactional
+@Transactional(rollbackOn=Exception.class)
 public class CustomerServiceImpl implements ICustomerService {
 
 	@Autowired
 	private CustomerDao  customerDao;
+	
 	
 	public Customer addorUpdateCustomer(Customer customer) {
 		

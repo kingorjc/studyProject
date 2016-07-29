@@ -1,0 +1,3 @@
+1.更新项目依赖包
+2.如果项目启动会出现问题，加入maven依赖,在java build path中
+3.路径：项目-》properties-》Deployment Assembly-》add-》...
